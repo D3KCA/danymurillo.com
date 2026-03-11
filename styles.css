@@ -1,19 +1,19 @@
 body {
-    font-family:'Courier New', Courier, monospace;
-    max-width: 40em;
-    margin: 0 auto;
-    padding: 5px;
-    line-height: 1.5;
-    text-align: center left;
-    padding: 1rem;
-    font-size: 18px; 
-    background-color: #222222;
-    color: #f7984f;
+  font-family: "Courier New", Courier, monospace;
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 5px;
+  line-height: 1.5;
+  text-align: center left;
+  padding: 1rem;
+  font-size: 18px;
+  background-color: #ffffff;
+  color: #000000;
 }
-h1{ 
-    text-align: center;
-     font-size: 2rem;
-    margin-bottom: 1rem;
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 p {
   margin-bottom: 3rem;
@@ -23,9 +23,9 @@ p {
 }
 
 a {
-  color: #ffffff;
+  color: #f7984f;
   text-decoration: none;
-	text-align: center ;
+  text-align: center;
 }
 
 a:hover {
@@ -34,7 +34,7 @@ a:hover {
 
 nav {
   margin-bottom: 1.5rem;
-	text-align: center ;
+  text-align: center;
 }
 
 nav a {
@@ -42,11 +42,9 @@ nav a {
   font-weight: bold;
 }
 
-footer
- {
-    margin-top: 2rem;
-    font-size: 0.875rem;
-    color: #fff;
-    text-align: center;
+footer {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: #000000;
+  text-align: center;
 }
-
