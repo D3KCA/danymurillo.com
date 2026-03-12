@@ -59,6 +59,7 @@ h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+
 p {
   margin-bottom: 3rem;
   max-width: 600px;
@@ -106,6 +107,29 @@ nav a:hover {
 nav a.active {
   background-color: var(--nav-hover-bg);
   color: var(--nav-hover-text);
+}
+
+.home-section {
+  margin: 1rem 0;
+  padding: 1.25rem;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+}
+
+.home-section h3 {
+  margin: 0 0 0.5rem;
+}
+
+.home-section p {
+  margin: 0 0 1.25rem;
+  max-width: none;
+}
+
+.home-section p:last-child {
+  margin-bottom: 0;
 }
 
 .theme-toggle {
