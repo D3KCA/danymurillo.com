@@ -37,8 +37,8 @@
     var toggle = document.querySelector(".theme-toggle");
     if (toggle) {
       toggle.setAttribute("aria-pressed", String(theme === "dark"));
-      // Use symbol-style icons for cleaner alignment than emoji glyphs.
-      var icon = theme === "dark" ? String.fromCodePoint(0x263C) : String.fromCodePoint(0x263D);
+      // Use moon/sun symbols that render centered across common system fonts.
+      var icon = theme === "dark" ? String.fromCodePoint(0x263C) : String.fromCodePoint(0x1F319);
       toggle.innerHTML = '<span class="theme-icon">' + icon + "</span>";
       toggle.classList.toggle("is-moon", theme !== "dark");
       toggle.setAttribute("title", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
