@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/png" href="faviconkey.png" />
+    <link rel="icon" type="image/png" href="images/faviconkey.png" />
     <title>Dany Murillo - Books</title>
   </head>
   <body>
@@ -12,29 +12,73 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="now.html">Now</a>
-      <a href="books.html">Books</a>
+      <a class="active" href="books.html">Books</a>
       <a href="links.html">Links</a>
       <a href="https://github.com/D3KCA">GitHub</a>
       <a href="mailto:Danyxmurillo@gmail.com">Email</a>
     </nav>
     <!-- Content -->
     <h1>Books</h1>
-    <h4>Books that I have read</h4>
-    <p>Last Updated: 2026-02-04</p>
-    <h5>Current Book
-      <ol>Mistborn: The Final Empire - By: Brandon Sanderson</ol></h5>
-    <h4>2025</h4>
-    <ul>
-      <li>The Terminal List: A Thriller - By: Jack Carr</li>
-      <li>True Believer: A Thriller -  By: Jack Carr</li>
-      <li>The Brotherhood of the Rose - By: David Morrell</li>
-      <li>Red Queen - By: Victoria Aveyard</li>
-    </ul>
-    <h4>2026 - Goal 2 of 12</h4>
-    <ul>
-      <li>Mistborn: The Final Empire - By: Brandon Sanderson</li>
-      <li>Savage Son (Terminal List #3) - By: Jack Carr</li>
-      
-    </ul>
+
+    <div class="goal-tracker">
+      <strong>2026 goal: 12 books</strong>
+      <div class="goal-bar">
+        <div class="goal-progress"></div>
+      </div>
+      <p>4 / 12 books read</p>
+    </div>
+
+    <section>
+      <h2>Currently Reading</h2>
+      <div class="cards">
+        <div class="book-card current-book">
+          <img src="images/The well of ascension.jpg" alt="The Well of Ascension cover">
+          <div class="info">
+            <h3>The Well of Ascension</h3>
+            <p>By Brandon Sanderson</p>
+            <p>Status: <strong>Reading</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Books I've Read</h2>
+      <div class="cards">
+        <div class="book-card">
+          <img src="images/The_terminal_list.jpg" alt="The Terminal List cover">
+          <p>2025</p>
+        </div>
+        <div class="book-card">
+          <img src="images/True_beliver.jpg" alt="True Believer cover">
+          <p>2025</p>
+        </div>
+        <div class="book-card">
+          <img src="images/Brotherhood_of_the_rose.jpg" alt="The Brotherhood of the Rose cover">
+          <p>2025</p>
+        </div>
+        <div class="book-card">
+          <img src="images/Redqueen.jpg" alt="Red Queen cover">
+          <p>2025</p>
+        </div>
+        <div class="book-card">
+          <img src="images/Savage_son.jpg" alt="Savage Son cover">
+          <p>2026</p>
+        </div>
+        <div class="book-card">
+          <img src="images/The_devils_hand.jpg" alt="The Devil's Hand cover">
+          <p>2026</p>
+        </div>
+        <div class="book-card">
+          <img src="images/In_the_blood.png" alt="In the Blood cover">
+          <p>2026</p>
+        </div>
+        <div class="book-card">
+          <img src="images/Mistborn the final empire.jpg" alt="Mistborn: The Final Empire cover">
+          <p>2026</p>
+        </div>
+      </div>
+    </section>
+    <script src="theme.js"></script>
   </body>
 </html>

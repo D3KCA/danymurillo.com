@@ -4,14 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/png" href="faviconkey.png" />
+    <link rel="icon" type="image/png" href="images/faviconkey.png" />
     <title>Dany Murillo - Now</title>
+    <!-- disable hover for cards on this page only -->
+    <style>
+      .book-card:hover {
+        transform: none !important;
+        box-shadow: var(--shadow-sm) !important;
+        background-color: var(--card-bg) !important;
+      }
+    </style>
   </head>
   <body>
     <!-- Navagation Bar -->
     <nav>
       <a href="index.html">Home</a>
-      <a href="now.html">Now</a>
+      <a class="active" href="now.html">Now</a>
       <a href="books.html">Books</a>
       <a href="links.html">Links</a>
       <a href="https://github.com/D3KCA">GitHub</a>
@@ -19,14 +27,20 @@
     </nav>
     <!-- Content -->
     <h1>What I Am Doing Now</h1>
-    <p>Updated 2026-03-010, From my Nook</p>
 
-    <h4>Making a Website</h4>
-    <p>
-      This was inspired by wanting to create my own space on the internet, and
-      an interest in computers and the ways that they work. it's taken some time
-      for me to actually get a good start due to overthinking all styling that
-      you are able to do.
-    </p>
+    <section>
+      <div class="cards">
+        <div class="book-card">
+          <h3>Making a Website</h3>
+          <p>
+            This was inspired by wanting to create my own space on the internet, and
+            an interest in computers and the ways that they work. it's taken some time
+            for me to actually get a good start due to overthinking all styling that
+            you are able to do.
+          </p>
+        </div>
+      </div>
+    </section>
+    <script src="theme.js"></script>
   </body>
 </html>

@@ -1,14 +1,58 @@
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --text: #111111;
+  --muted-text: #555555;
+  --link: #f7984f;
+  --nav-bg: #f7f7f7;
+  --nav-border: #e6e6e6;
+  --nav-link: #5a371a;
+  --nav-hover-bg: #f7984f;
+  --nav-hover-text: #ffffff;
+  --card-bg: #fafafa;
+  --card-border: #cccccc;
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.2);
+  --footer-bg: rgba(248, 248, 248, 0.8);
+  --footer-border: #dddddd;
+  --goal-bg: #dddddd;
+  --goal-border: #cccccc;
+  --accent: #f7984f;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #121417;
+  --text: #e9edf1;
+  --muted-text: #b7bec7;
+  --link: #ffb06f;
+  --nav-bg: #1a1f25;
+  --nav-border: #2b323a;
+  --nav-link: #f2c49b;
+  --nav-hover-bg: #ffb06f;
+  --nav-hover-text: #1b1f24;
+  --card-bg: #1a1f25;
+  --card-border: #333c46;
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 6px 14px rgba(0, 0, 0, 0.45);
+  --footer-bg: rgba(26, 31, 37, 0.9);
+  --footer-border: #333c46;
+  --goal-bg: #2a3139;
+  --goal-border: #3a4450;
+  --accent: #ffb06f;
+}
+
 body {
   font-family: "Courier New", Courier, monospace;
   max-width: 40em;
   margin: 0 auto;
-  padding: 5px;
+  padding: 1rem;
+  padding-bottom: 3rem; /* ensure content above fixed footer */
   line-height: 1.5;
   text-align: center left;
-  padding: 1rem;
   font-size: 18px;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--bg);
+  color: var(--text);
 }
 h1 {
   text-align: center;
@@ -23,7 +67,7 @@ p {
 }
 
 a {
-  color: #f7984f;
+  color: var(--link);
   text-decoration: none;
   text-align: center;
 }
@@ -33,18 +77,177 @@ a:hover {
 }
 
 nav {
-  margin-bottom: 1.5rem;
-  text-align: center;
+  margin: 0 auto 1.75rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  background-color: var(--nav-bg);
+  border: 1px solid var(--nav-border);
+  border-radius: 10px;
 }
 
 nav a {
-  margin: 0 0.5rem;
+  margin: 0;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
   font-weight: bold;
+  color: var(--nav-link);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+  text-decoration: none;
+  background-color: var(--nav-hover-bg);
+  color: var(--nav-hover-text);
+}
+
+nav a.active {
+  background-color: var(--nav-hover-bg);
+  color: var(--nav-hover-text);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid var(--nav-border);
+  background-color: var(--nav-bg);
+  color: var(--nav-link);
+  font-family: "Segoe UI Symbol", "Arial Unicode MS", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--nav-hover-bg);
+  color: var(--nav-hover-text);
+  border-color: var(--nav-hover-bg);
+  transform: translateY(-1px);
+}
+
+.theme-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transform-origin: center center;
+}
+
+.theme-toggle.is-moon .theme-icon {
+  transform: translate(1px, -1px) scaleX(-1) rotate(45deg);
 }
 
 footer {
-  margin-top: 2rem;
-  font-size: 0.875rem;
-  color: #000000;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--footer-bg);
+  font-size: 0.65rem;
+  color: var(--muted-text);
   text-align: center;
+  border-top: 1px solid var(--footer-border);
+  letter-spacing: 0.5px;
+  font-style: italic;
+}
+
+/* cards layout for books */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+/* goal tracker */
+.goal-tracker {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+.goal-bar {
+  width: 100%;
+  background: var(--goal-bg);
+  border: 1px solid var(--goal-border);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 1rem;
+}
+
+/* current reading layout */
+.current-book {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.current-book img {
+  max-width: 100px;
+  height: auto;
+  margin-right: 1rem;
+  border-radius: 4px;
+}
+.current-book .info {
+  display: flex;
+  flex-direction: column;
+}
+.current-book .info p {
+  margin: 0.25rem 0;
+}.goal-progress {
+  height: 100%;
+  background-color: var(--accent);
+  width: 33.33%; /* 4 of 12 books read */
+  transition: width 0.3s ease;
+}
+
+.book-card {
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+  background-color: var(--card-bg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  background-color: var(--card-bg);
+}
+
+.book-card h3 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.book-card img {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.5rem;
+  border-radius: 4px;
+}
+
+.book-card p {
+  margin: 0.25rem 0;
 }
