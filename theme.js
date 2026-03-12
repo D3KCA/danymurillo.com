@@ -57,12 +57,34 @@
     var toggle = createToggle();
     setTheme(getPreferredTheme());
 
-    toggle.addEventListener("click", function () {
+    var lastToggleAt = 0;
+
+    function handleToggle() {
+      var now = Date.now();
+      // Prevent duplicate toggles when touch and click both fire on mobile.
+      if (now - lastToggleAt < 350) {
+        return;
+      }
+      lastToggleAt = now;
+
       var current = root.getAttribute("data-theme") || "light";
       var next = current === "dark" ? "light" : "dark";
       setTheme(next);
       saveTheme(next);
-    });
+    }
+
+    toggle.addEventListener("click", handleToggle);
+
+    if (!window.PointerEvent) {
+      toggle.addEventListener(
+        "touchend",
+        function (event) {
+          event.preventDefault();
+          handleToggle();
+        },
+        { passive: false }
+      );
+    }
   }
 
   document.addEventListener("DOMContentLoaded", initThemeToggle);
